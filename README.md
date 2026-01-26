@@ -4,16 +4,11 @@
 <div align="center">
 
 # Netch
-A simple proxy client
-
-[![](https://img.shields.io/badge/telegram-group-green?style=flat-square)](https://t.me/netch_group)
-[![](https://img.shields.io/badge/telegram-channel-blue?style=flat-square)](https://t.me/netch_channel)
-[![](https://img.shields.io/github/downloads/netchx/netch/total.svg?style=flat-square)](https://github.com/netchx/netch/releases)
-[![](https://img.shields.io/github/v/release/netchx/netch?style=flat-square)](https://github.com/netchx/netch/releases)
+Proxy client with per-app (split) support, with VLESS support
 </div>
 
-## Features
-Some features may not be implemented in version 1
+## Why?
+Netch, but with added REALITY support, and xray core updated to support new transports. Also with corrected per-proccess routing.
 
 ### Modes
 - `ProcessMode` - Use Netfilter driver to intercept process traffic
@@ -28,14 +23,11 @@ Some features may not be implemented in version 1
 - [`WireGuard`](https://www.wireguard.com)
 - [`Trojan`](https://trojan-gfw.github.io/trojan)
 - [`VMess`](https://www.v2fly.org)
-- [`VLESS`](https://xtls.github.io)
+- [`VLESS (With REALITY support)`](https://xtls.github.io)
 
 ### Others
 - UDP NAT FullCone (Limited by your server)
 - .NET 6.0 x64
-
-## Sponsor
-<a href="https://www.jetbrains.com/?from=Netch"><img src="jetbrains.svg" alt="JetBrains" width="200"/></a>
 
 ## License
 Netch is licensed under the [GPLv3](https://raw.githubusercontent.com/netchx/netch/main/LICENSE) license

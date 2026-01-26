@@ -100,6 +100,26 @@ public class VMessServer : Server
     public bool? UseMux { get; set; }
 
     public string? ServerName { get; set; } = string.Empty;
+
+    /// <summary>
+    ///     Reality Public Key
+    /// </summary>
+    public string? RealityPublicKey { get; set; }
+
+    /// <summary>
+    ///     Reality Short ID
+    /// </summary>
+    public string? RealityShortId { get; set; }
+
+    /// <summary>
+    ///     Reality Spider X
+    /// </summary>
+    public string? RealitySpiderX { get; set; }
+
+    /// <summary>
+    ///     TLS Fingerprint
+    /// </summary>
+    public string? Fingerprint { get; set; }
 }
 
 public class VMessGlobal

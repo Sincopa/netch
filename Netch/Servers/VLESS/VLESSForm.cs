@@ -40,6 +40,12 @@ internal class VLESSForm : ServerForm
             server.UseMux?.ToString().ToLower() ?? "");
 
         CreateComboBox("TLSSecure", "TLS Secure", VLESSGlobal.TLSSecure, s => server.TLSSecureType = s, server.TLSSecureType);
+        
+        // Reality settings
+        CreateComboBox("Fingerprint", "Fingerprint", VLESSGlobal.Fingerprints, s => server.Fingerprint = s, server.Fingerprint ?? "");
+        CreateTextBox("RealityPublicKey", "Reality Public Key", s => true, s => server.RealityPublicKey = s, server.RealityPublicKey ?? "");
+        CreateTextBox("RealityShortId", "Reality Short ID", s => true, s => server.RealityShortId = s, server.RealityShortId ?? "");
+        CreateTextBox("RealitySpiderX", "Reality Spider X", s => true, s => server.RealitySpiderX = s, server.RealitySpiderX ?? "");
     }
 
     protected override string TypeName { get; } = "VLESS";

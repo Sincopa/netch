@@ -5,17 +5,17 @@ public class VLESSServer : VMessServer
     public override string Type { get; } = "VLESS";
 
     /// <summary>
-    ///     加密方式
+    ///     Encrypt Method
     /// </summary>
     public override string EncryptMethod { get; set; } = "none";
 
     /// <summary>
-    ///     传输协议
+    ///     Transfer Protocol
     /// </summary>
     public override string TransferProtocol { get; set; } = VLESSGlobal.TransferProtocols[0];
 
     /// <summary>
-    ///     伪装类型
+    ///     Fake Type
     /// </summary>
     public override string FakeType { get; set; } = VLESSGlobal.FakeTypes[0];
 }
@@ -26,7 +26,23 @@ public class VLESSGlobal
     {
         "none",
         "tls",
-        "xtls"
+        "xtls",
+        "reality"
+    };
+
+    public static readonly List<string> Fingerprints = new()
+    {
+        "",
+        "chrome",
+        "firefox",
+        "safari",
+        "ios",
+        "android",
+        "edge",
+        "360",
+        "qq",
+        "random",
+        "randomized"
     };
 
     public static List<string> FakeTypes => VMessGlobal.FakeTypes;

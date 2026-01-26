@@ -122,6 +122,8 @@ public class StreamSettings
 
     public TlsSettings xtlsSettings { get; set; }
 
+    public RealitySettings realitySettings { get; set; }  // Add this
+
     public GrpcSettings grpcSettings { get; set; }
 
     public Sockopt sockopt { get; set; }
@@ -167,6 +169,21 @@ public class KcpSettings
     public object header { get; set; }
 
     public string seed { get; set; }
+}
+
+public class RealitySettings
+{
+    public bool show { get; set; }
+    
+    public string serverName { get; set; }
+    
+    public string fingerprint { get; set; }
+    
+    public string publicKey { get; set; }
+    
+    public string shortId { get; set; }
+    
+    public string spiderX { get; set; }
 }
 
 public class HttpSettings

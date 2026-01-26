@@ -8,13 +8,14 @@ namespace Netch.Servers;
 
 public class V2rayController : Guard, IServerController
 {
-    public V2rayController() : base("v2ray-sn.exe")
+    public V2rayController() : base("xray.exe")
     {
         //if (!Global.Settings.V2RayConfig.XrayCone)
         //    Instance.StartInfo.Environment["XRAY_CONE_DISABLED"] = "true";
     }
 
-    protected override IEnumerable<string> StartedKeywords => new[] { "started" };
+    // Xray uses slightly different startup message
+    protected override IEnumerable<string> StartedKeywords => new[] { "Xray", "started" };
 
     protected override IEnumerable<string> FailedKeywords => new[] { "config file not readable", "failed to" };
 

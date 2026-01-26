@@ -84,7 +84,7 @@ public static class V2rayConfigUtils
                             new User
                             {
                                 id = getUUID(vless.UserID),
-                                flow = vless.TLSSecureType == "xtls" ? "xtls-rprx-direct" : "",
+                                flow = vless.TLSSecureType == "xtls" ? "xtls-rprx-vision" : "",
                                 encryption = vless.EncryptMethod
                             }
                         }
@@ -211,7 +211,7 @@ public static class V2rayConfigUtils
                         port = server.Port,
                         method = "",
                         password = trojan.Password,
-                        flow = trojan.TLSSecureType == "xtls" ? "xtls-rprx-direct" : ""
+                        flow = trojan.TLSSecureType == "xtls" ? "xtls-rprx-vision" : ""
                     }
                 };
 
@@ -304,7 +304,21 @@ public static class V2rayConfigUtils
             security = server.TLSSecureType
         };
 
-        if (server.TLSSecureType != "none")
+    if (server.TLSSecureType != "none")
+    {
+        if (server.TLSSecureType == "reality")
+        {
+            streamSettings.realitySettings = new RealitySettings
+            {
+                show = false,
+                serverName = server.ServerName.ValueOrDefault() ?? "",
+                fingerprint = server.Fingerprint.ValueOrDefault() ?? "chrome",
+                publicKey = server.RealityPublicKey ?? "",
+                shortId = server.RealityShortId ?? "",
+                spiderX = server.RealitySpiderX ?? ""
+            };
+        }
+        else
         {
             var tlsSettings = new TlsSettings
             {
@@ -322,6 +336,7 @@ public static class V2rayConfigUtils
                     break;
             }
         }
+    }
 
         switch (server.TransferProtocol)
         {

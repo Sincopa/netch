@@ -12,7 +12,8 @@ public class ShadowsocksController : Guard, IServerController
     {
     }
 
-    protected override IEnumerable<string> StartedKeywords => new[] { "listening on" };
+    // Xray uses slightly different startup message
+    protected override IEnumerable<string> StartedKeywords => new[] { "Xray", "started" };
 
     protected override IEnumerable<string> FailedKeywords => new[] { "error", "failed to start plguin" };
 

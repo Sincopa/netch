@@ -55,6 +55,14 @@ public static class V2rayUtils
             if (server.TLSSecureType != "none")
             {
                 server.ServerName = parameter.Get("sni") ?? "";
+                server.Fingerprint = parameter.Get("fp") ?? "";
+                
+                if (server.TLSSecureType == "reality")
+                {
+                    server.RealityPublicKey = parameter.Get("pbk") ?? "";
+                    server.RealityShortId = parameter.Get("sid") ?? "";
+                    server.RealitySpiderX = Uri.UnescapeDataString(parameter.Get("spx") ?? "");
+                }
             }
         }
 
@@ -130,12 +138,26 @@ public static class V2rayUtils
         {
             parameter.Add("security", server.TLSSecureType);
 
-            if (!server.Host.IsNullOrWhiteSpace())
-                parameter.Add("sni", server.Host!);
+            if (!server.ServerName.IsNullOrWhiteSpace())
+                parameter.Add("sni", server.ServerName!);
 
-            if (server.TLSSecureType == "xtls")
+            if (!server.Fingerprint.IsNullOrWhiteSpace())
+                parameter.Add("fp", server.Fingerprint!);
+
+            if (server.TLSSecureType == "reality")
             {
-                parameter.Add("flow", "xtls-rprx-direct");
+                if (!server.RealityPublicKey.IsNullOrWhiteSpace())
+                    parameter.Add("pbk", server.RealityPublicKey!);
+
+                if (!server.RealityShortId.IsNullOrWhiteSpace())
+                    parameter.Add("sid", server.RealityShortId!);
+
+                if (!server.RealitySpiderX.IsNullOrWhiteSpace())
+                    parameter.Add("spx", Uri.EscapeDataString(server.RealitySpiderX!));
+            }
+            else if (server.TLSSecureType == "xtls")
+            {
+                parameter.Add("flow", "xtls-rprx-vision");
             }
         }
 
