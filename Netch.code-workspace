@@ -1,0 +1,28 @@
+{
+  "folders": [
+    {
+      "name": "Netch",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/bin": true,
+      "**/obj": true,
+      "**/node_modules": true,
+      "**/dist": true,
+      ".cache": true,
+      "artifacts": true,
+      "release-local": true
+    },
+    "search.exclude": {
+      "**/bin": true,
+      "**/obj": true,
+      "**/node_modules": true,
+      "**/dist": true,
+      ".cache": true,
+      "artifacts": true,
+      "release-local": true
+    }
+  }
+}

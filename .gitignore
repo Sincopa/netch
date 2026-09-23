@@ -5,3 +5,13 @@
 /TestResults
 /.github
 /output
+**/node_modules/
+/src/Netch.WebUI/dist/
+**/bin/
+**/obj/
+/.dotnet-home/
+/.nuget-packages/
+/.tooling/
+/.cache/
+/artifacts/
+/release-local/

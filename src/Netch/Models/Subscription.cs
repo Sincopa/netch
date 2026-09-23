@@ -1,0 +1,27 @@
+﻿namespace Netch.Models;
+
+public class Subscription
+{
+    // Independent of endpoint order, subscription URL and display name.
+    public string RoutingId { get; set; } = Guid.NewGuid().ToString("N");
+    public string? RoutingModePath { get; set; }
+    /// <summary>
+    ///     启用状态
+    /// </summary>
+    public bool Enable { get; set; } = true;
+
+    /// <summary>
+    ///     链接
+    /// </summary>
+    public string Link { get; set; } = string.Empty;
+
+    /// <summary>
+    ///     备注
+    /// </summary>
+    public string Remark { get; set; } = string.Empty;
+
+    /// <summary>
+    ///     User Agent
+    /// </summary>
+    public string UserAgent { get; set; } = string.Empty;
+}
